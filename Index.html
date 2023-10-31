@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página com Background e Botões</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-size: contain;
+      background-position: center; /* Alterada para começar do topo */
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff; /* Define a cor do texto para ser visível na imagem de fundo */
+      position: relative;
+    }
+
+    @media only screen and (min-width: 768px) {
+      /* Dispositivos com largura igual ou superior a 768 pixels (tablets e desktops) */
+      body {
+        background-image: url('background.png');
+	background-color: #f3f3f3
+      }
+
+      .button-container {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        max-width: 20%; /* Ajuste a largura máxima conforme necessário */
+        width: 100%; /* Certifica-se de que a largura seja 100% */
+      }
+
+      .button {
+        margin-bottom: 10px;
+        padding: 10px; /* Ajuste o preenchimento conforme necessário */
+        background: linear-gradient(to bottom, #FF8C00, #FF4500); /* Gradiente laranja de cima para baixo */
+        color: white;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%; /* Garante que a largura seja 100% */
+        border-radius: 10px; /* Bordas arredondadas */
+        font-weight: bold; /* Letras mais grossas */
+        font-family: 'Quicksand', sans-serif; /* Fonte mais arredondada e mais grossa */
+        box-sizing: border-box; /* Garante que o preenchimento não aumente a largura total */
+        box-shadow: 3px 3px 5px #888888; /* Sombreamento com leve sombra na direita e abaixo */
+      }
+
+
+      .additional-links {
+        text-align: center;
+	box-sizing: border-box;
+	width: 100%;
+	display: inline-block;
+	border: none;
+	background-color: #f8f8f9; /* Cor de fundo branca */
+	padding: 1px;
+	border-radius: 10px; /* Cantos arredondados */
+      }
+
+      .additional-links a {
+        color: #FF4500; /* Laranja escuro */
+	text-shadow: #FFFFFF;
+        text-decoration: none;
+        font-family: 'Quicksand', sans-serif; /* Fonte mais arredondada e mais grossa */
+        font-size: 16px;
+        display: block;
+        margin-bottom: 10px;
+	text-align: center;
+	text-decoration: underline;
+      }
+
+      /* Oculta os botões da versão mobile */
+      .button-container-mobile,
+      .additional-links-mobile {
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      /* Dispositivos com largura inferior a 768 pixels (celulares) */
+      body {
+        background-image: url('mobilebackground.png');
+        background-size: 100% auto; /* Largura da imagem corresponde à largura da tela */
+        background-attachment: scroll; /* Permite scroll vertical */
+	background-color: #f3f3f3
+      }
+
+      /* Oculta os botões da versão desktop */
+      .button-container,
+      .additional-links {
+        display: none;
+      }
+
+      .button-container-mobile {	
+        position: absolute;
+        bottom: 13px; /* Ajuste a distância do fundo conforme necessário */
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        width: 90%; /* Ajuste a largura conforme necessário */
+        align-items: center;
+        justify-content: flex-end; /* Coloca os botões no final do container */
+      }
+
+      .button-mobile {
+        margin-bottom: 10px; /* Ajuste a margem inferior conforme necessário */
+        padding: 10px; /* Ajuste o preenchimento conforme necessário */
+        background: linear-gradient(to bottom, #FF8C00, #FF4500); /* Gradiente laranja de cima para baixo */
+        color: white;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%; /* Ajuste a largura conforme necessário */
+        border-radius: 10px; /* Bordas arredondadas */
+        font-weight: bold; /* Letras mais grossas */
+        font-family: 'Quicksand', sans-serif; /* Fonte mais arredondada e mais grossa */
+        box-sizing: border-box; /* Garante que o preenchimento não aumente a largura total */
+        box-shadow: 3px 3px 5px #888888; /* Sombreamento com leve sombra na direita e abaixo */
+      }
+      .additional-links-mobile {
+        color: #FF4500; /* Laranja escuro */
+	text-shadow: #FFFFFF;
+        text-decoration: none;
+	font-weight: bold; /* Letras mais grossas */
+        font-family: 'Quicksand', sans-serif; /* Fonte mais arredondada e mais grossa */
+        font-size: 14px;
+        display: block;
+	text-align: center;
+      }
+
+      .additional-links-mobile a {
+        color: #FF4500; /* Laranja escuro */
+        text-decoration: none;
+        display: block;
+        margin-bottom: 5px;
+	text-decoration: underline;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Botões para desktop -->
+  <div class="button-container">
+    <a href=https://docs.google.com/forms/u/0/?hl=pt-br" class="button">Educação Infantil</a>
+    <a href="https://seu-link-aqui" class="button">Ensino Fundamental</a>
+    <a href="https://seu-link-aqui" class="button">Ensino Médio</a>
+    <div class="additional-links">
+        <a href="https://s.tintim.app/whatsapp/542094bb-cea0-4f1d-b82d-5cb7c1b90b65/49108f52-9ace-4eb7-875e-87c4e1d412d0">Entre em contato</a>
+        <a href="https://colegioteresa.com.br/home">Ir para nosso site</a>
+     </div>
+  </div>	
+
+
+  <!-- Botões para mobile -->
+  <div class="button-container-mobile">
+    <a href="https://seu-link-aqui" class="button-mobile">Educação Infantil</a>
+    <a href="https://seu-link-aqui" class="button-mobile">Ensino Fundamental</a>
+    <a href="https://seu-link-aqui" class="button-mobile">Ensino Médio</a>
+    <div class="additional-links-mobile">
+      <a href="https://s.tintim.app/whatsapp/542094bb-cea0-4f1d-b82d-5cb7c1b90b65/49108f52-9ace-4eb7-875e-87c4e1d412d0">Entre em contato</a>
+      <a href="https://colegioteresa.com.br/home">Ir para nosso site</a>
+    </div>
+  </div>
+
+</body>
+</html>
